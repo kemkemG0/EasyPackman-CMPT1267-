@@ -9,10 +9,6 @@
 #include "Game.h"
 #include "SDL/SDL_image.h"
 #include <algorithm>
-//#include "Actor.h"
-//#include "SpriteComponent.h"
-//#include "Ship.h"
-//#include "Asteroid.h"
 #include "Random.h"
  #include "SDL/SDL_mixer.h"
 
@@ -35,7 +31,7 @@ bool Game::Initialize()
 		return false;
 	}
 	
-	mWindow = SDL_CreateWindow("Game Programming in C++ (Chapter 3)", 100, 100, 1024, 768, 0);
+	mWindow = SDL_CreateWindow("Easy Packman(final project)", 100, 100, 768, 768, 0);
 	if (!mWindow)
 	{
 		SDL_Log("Failed to create window: %s", SDL_GetError());
