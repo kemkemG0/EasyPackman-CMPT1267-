@@ -21,9 +21,7 @@ void Enemy::Update(){
 
 
     if(posi_x%32==0 && posi_y%32==0){
-        cout<<"!!POP!!"<<endl;
         direction = path.top();
-        //didn't use this time
         path.pop();
     }
     if(!canMove())return;

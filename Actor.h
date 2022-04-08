@@ -18,6 +18,7 @@ public:
 	virtual void Update()=0;
 	bool canChangeDirection();
 	bool canMove();
+	int direction_reserve;
 	int direction;
 	int speed=8;
 	int previousDirection;

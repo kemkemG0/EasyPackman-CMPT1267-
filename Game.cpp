@@ -93,20 +93,16 @@ void Game::ProcessInput()
 		else if (event.type == SDL_KEYDOWN){
 			switch (event.key.keysym.sym){
 				case SDLK_UP:
-				if(packman->previousDirection==packman->DOWN || packman->canChangeDirection())
-					packman->direction=packman->UP;
+					packman->direction_reserve=packman->UP;
 					break;
 				case SDLK_DOWN:
-				if(packman->previousDirection==packman->UP || packman->canChangeDirection())
-					packman->direction=packman->DOWN;
+					packman->direction_reserve=packman->DOWN;
 					break;
 				case SDLK_LEFT:
-				if(packman->previousDirection==packman->RIGHT || packman->canChangeDirection())
-					packman->direction=packman->LEFT;
+					packman->direction_reserve=packman->LEFT;
 					break;
 				case SDLK_RIGHT:
-				if(packman->previousDirection==packman->LEFT || packman->canChangeDirection())
-					packman->direction=packman->RIGHT;
+					packman->direction_reserve=packman->RIGHT;
 					break;
 			}
 		}
