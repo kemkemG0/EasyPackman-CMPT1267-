@@ -10,10 +10,10 @@ public:
     class Game* mGame;
 	Actor(class Game* game);
 	// ~Actor();
-	double x,y;
+	double posi_x,posi_y;
 	SDL_Texture* mTexture;
 	void SetTexture(SDL_Texture*);
     virtual void Draw(SDL_Renderer* renderer);
-
+	void Update();
 	int direction;
 };
