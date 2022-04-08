@@ -56,6 +56,8 @@ bool Game::Initialize()
 	mTicksCount = SDL_GetTicks();
 
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+
+	stage = new Stage;
 	return true;
 }
 
@@ -119,6 +121,8 @@ void Game::GenerateOutput()
 	//bg?
 	SDL_SetRenderDrawColor(mRenderer, 220, 220, 220, 255);
 	SDL_RenderClear(mRenderer);
+
+	stage->DrawStage(mRenderer);
 	
 	// Draw all sprite components
 		/*	for (auto sprite : mSprites)

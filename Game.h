@@ -15,6 +15,8 @@
 #include<iostream>
 #include "SDL/SDL_mixer.h"
 
+#include "Stage.h"
+
 
 class Game
 {
@@ -31,6 +33,8 @@ public:
 	void RemoveSprite(class SpriteComponent* sprite);
 	
 	SDL_Texture* GetTexture(const std::string& fileName);*/
+
+	Stage* stage;
 
 
 private:
