@@ -30,14 +30,12 @@ public:
 	void RemoveActor(class Actor* actor);
 
 	void AddSprite(class SpriteComponent* sprite);
-	void RemoveSprite(class SpriteComponent* sprite);
+	void RemoveSprite(class SpriteComponent* sprite);*/
 	
-	SDL_Texture* GetTexture(const std::string& fileName);*/
+	SDL_Texture* GetTexture(const std::string& fileName);
 
 	Stage* stage;
 
-
-private:
 	void ProcessInput();
 	void UpdateGame();
 	void GenerateOutput();
