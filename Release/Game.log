@@ -1,0 +1,31 @@
+﻿  Actor.cpp
+\\Mac\Home\Desktop\final\final\Actor.cpp(33,8): warning C4101: 'y': unreferenced local variable
+\\Mac\Home\Desktop\final\final\Actor.cpp(33,6): warning C4101: 'x': unreferenced local variable
+  Enemy.cpp
+  Game.cpp
+\\Mac\Home\Desktop\final\final\Game.cpp(73,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+\\Mac\Home\Desktop\final\final\Game.cpp(130,15): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  MyMacros.h
+  Packman.cpp
+  Stage.cpp
+  Stage.h
+Release\Stage.obj : warning LNK4042: object specified more than once; extras ignored
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 577 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Game.vcxproj -> \\Mac\Home\Desktop\final\final\Release\Game.exe
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\libogg-0.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\SDL2_image.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\libvorbis-0.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\SDL2_mixer.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\zlib1.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\libvorbisfile-3.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\SDL2.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\libfreetype-6.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\libpng16-16.dll
+  \\Mac\Home\Desktop\final\final\\..\external\SDL\lib\win\x86\SDL2_ttf.dll
+  10 File(s) copied
+  \\Mac\Home\Desktop\final\final\\..\external\GLEW\lib\win\x86\glew32.dll
+  1 File(s) copied
