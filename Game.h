@@ -16,6 +16,7 @@
 #include "SDL/SDL_mixer.h"
 
 #include "Stage.h"
+#include <time.h>
 
 #include"Actor.h"
 

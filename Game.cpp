@@ -67,6 +67,8 @@ bool Game::Initialize()
 	mActors.push_back(new Enemy(this,15,22,"Assets/red.png"));
 	mActors.push_back(new Enemy(this, 8, 22, "Assets/purple.png"));
 
+	srand(time(NULL));
+
 	return true;
 }
 
