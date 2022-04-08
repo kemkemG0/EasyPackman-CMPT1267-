@@ -16,13 +16,13 @@
  #include "Enemy.h"
 #include<iostream>
 
-Game::Game()	
+Game::Game()
 :mWindow(nullptr)
 ,mRenderer(nullptr)
 ,mIsRunning(true)
 ,mUpdatingActors(false)
 {
-	
+	counter=0;
 }
 
 
@@ -67,6 +67,9 @@ bool Game::Initialize()
 	mActors.push_back(new Enemy(this,22,15,"Assets/red.png"));
 	mActors.push_back(new Enemy(this, 20,8, "Assets/purple.png"));
 
+	Mix_Music* bgm = Mix_LoadMUS("Assets/packmanBGM.wav");
+	Mix_PlayMusic(bgm, -1);
+
 	srand(time(NULL));
 
 	return true;
@@ -95,13 +98,25 @@ void Game::ProcessInput()
 				case SDLK_UP:
 					packman->direction_reserve=packman->UP;
 					break;
+				case  SDLK_w:
+					packman->direction_reserve=packman->UP;
+					break;
 				case SDLK_DOWN:
+					packman->direction_reserve=packman->DOWN;
+					break;
+				case  SDLK_s:
 					packman->direction_reserve=packman->DOWN;
 					break;
 				case SDLK_LEFT:
 					packman->direction_reserve=packman->LEFT;
 					break;
+				case  SDLK_a:
+					packman->direction_reserve=packman->LEFT;
+					break;
 				case SDLK_RIGHT:
+					packman->direction_reserve=packman->RIGHT;
+					break;
+				case   SDLK_d:
 					packman->direction_reserve=packman->RIGHT;
 					break;
 			}
@@ -127,6 +142,14 @@ void Game::UpdateGame()
 	// Compute delta time
 	// Wait until 16ms has elapsed since last frame
 	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 64));
+
+	if(counter%100==0){
+		mActors.push_back(new Enemy(this,3,10,"Assets/blue.png"));
+		mActors.push_back(new Enemy(this,22,15,"Assets/red.png"));
+		mActors.push_back(new Enemy(this, 20,8, "Assets/purple.png"));
+	}
+	++counter;
+	
 
 	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
 	if (deltaTime > 0.05f)deltaTime = 0.05f;

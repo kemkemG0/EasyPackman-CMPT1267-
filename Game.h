@@ -48,6 +48,9 @@ public:
 	std::vector<class Actor*> mPendingActors;
 
 
+	int counter;
+
+
 	SDL_Window* mWindow;
 	SDL_Renderer* mRenderer;
 	Uint32 mTicksCount;
