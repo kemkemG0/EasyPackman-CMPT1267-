@@ -79,24 +79,28 @@ void Game::RunLoop()
 void Game::ProcessInput()
 {
 	SDL_Event event;
+	auto packman = mActors[0];
 	while (SDL_PollEvent(&event))
 	{
-		switch (event.type)
-		{
-			case SDL_QUIT:
-				mIsRunning = false;
-				break;
+		if (event.type == SDL_QUIT) mIsRunning = false;
+		else if (event.type == SDL_KEYDOWN){
+			switch (event.key.keysym.sym){
+				case SDLK_UP:
+					packman->direction=0;
+					break;
+				case SDLK_DOWN:
+					packman->direction=1;
+					break;
+				case SDLK_LEFT:
+					packman->direction=2;
+					break;
+				case SDLK_RIGHT:
+					packman->direction=3;
+					break;
+			}
 		}
 	}
-	
-	const Uint8* keyState = SDL_GetKeyboardState(NULL);
-	if (keyState[SDL_SCANCODE_ESCAPE])
-	{
-		mIsRunning = false;
-	}
-
-	mUpdatingActors = true;
-	mUpdatingActors = false;
+	// std::cout<<packman->direction<<" ";
 }
 
 void Game::UpdateGame()

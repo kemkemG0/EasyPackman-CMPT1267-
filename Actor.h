@@ -14,4 +14,6 @@ public:
 	SDL_Texture* mTexture;
 	void SetTexture(SDL_Texture*);
     virtual void Draw(SDL_Renderer* renderer);
+
+	int direction;
 };

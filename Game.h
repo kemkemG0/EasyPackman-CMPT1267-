@@ -52,5 +52,4 @@ public:
 	// Track if we're updating actors right now
 	bool mUpdatingActors;
 
-
 };

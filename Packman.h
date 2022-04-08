@@ -4,7 +4,7 @@ class Packman :
     public Actor
 {
     public:
-    Packman(class Game* game);
+        Packman(class Game* game);
     // ~Packman();
 };
 
