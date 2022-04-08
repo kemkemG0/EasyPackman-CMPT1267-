@@ -35,16 +35,16 @@ bool Actor::canMove(){
 	
 	
 	if(direction==UP){
-		return stage->STAGE[posi_x/32][(posi_y-1)/32] != 1;
+		return stage->STAGE[(posi_y-1)/32][(posi_x)/32] != 1;
 	}
 	else if(direction==DOWN){
-		return stage->STAGE[(posi_x)/32][(posi_y+32+1)/32] != 1;
+		return stage->STAGE[(posi_y+32+1)/32][(posi_x)/32] != 1;
 	}
 	else if(direction==LEFT){
-		return stage->STAGE[(posi_x-1)/32][posi_y/32] != 1;
+		return stage->STAGE[(posi_y)/32][(posi_x-1)/32] != 1;
 	}
 	else if(direction==RIGHT){
-		return stage->STAGE[(posi_x+32+1)/32][posi_y/32] != 1;
+		return stage->STAGE[(posi_y)/32][(posi_x+32+1)/32] != 1;
 	}
 	
 	return true;

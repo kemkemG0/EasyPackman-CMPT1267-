@@ -63,7 +63,7 @@ bool Game::Initialize()
 	stage = new Stage;
 
 	mActors.push_back(new Packman(this,3,22));
-	mActors.push_back(new Enemy(this,10,22,"Assets/blue.png"));
+	mActors.push_back(new Enemy(this,10,10,"Assets/blue.png"));
 	mActors.push_back(new Enemy(this,15,22,"Assets/red.png"));
 	mActors.push_back(new Enemy(this, 8, 22, "Assets/purple.png"));
 
@@ -94,19 +94,19 @@ void Game::ProcessInput()
 			switch (event.key.keysym.sym){
 				case SDLK_UP:
 				if(packman->previousDirection==packman->DOWN || packman->canChangeDirection())
-					packman->direction=0;
+					packman->direction=packman->UP;
 					break;
 				case SDLK_DOWN:
 				if(packman->previousDirection==packman->UP || packman->canChangeDirection())
-					packman->direction=1;
+					packman->direction=packman->DOWN;
 					break;
 				case SDLK_LEFT:
 				if(packman->previousDirection==packman->RIGHT || packman->canChangeDirection())
-					packman->direction=2;
+					packman->direction=packman->LEFT;
 					break;
 				case SDLK_RIGHT:
 				if(packman->previousDirection==packman->LEFT || packman->canChangeDirection())
-					packman->direction=3;
+					packman->direction=packman->RIGHT;
 					break;
 			}
 		}
