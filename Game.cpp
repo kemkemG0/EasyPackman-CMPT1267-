@@ -10,6 +10,8 @@
 #include "SDL/SDL_image.h"
 #include <algorithm>
  #include "SDL/SDL_mixer.h"
+ #include "Stage.h"
+ #include "Actor.h"
 
 
 Game::Game()
@@ -57,6 +59,7 @@ bool Game::Initialize()
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
 	stage = new Stage;
+	auto aaa = new Actor(this);
 	return true;
 }
 
