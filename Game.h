@@ -26,12 +26,6 @@ public:
 	bool Initialize();
 	void RunLoop();
 	void Shutdown();
-
-	/*void AddActor(class Actor* actor);
-	void RemoveActor(class Actor* actor);
-
-	void AddSprite(class SpriteComponent* sprite);
-	void RemoveSprite(class SpriteComponent* sprite);*/
 	
 	SDL_Texture* GetTexture(const std::string& fileName);
 

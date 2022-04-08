@@ -96,10 +96,6 @@ void Game::ProcessInput()
 	}
 
 	mUpdatingActors = true;
-	/*for (auto actor : mActors)
-	{
-		actor->ProcessInput(keyState);
-	}*/
 	mUpdatingActors = false;
 }
 
@@ -107,18 +103,14 @@ void Game::UpdateGame()
 {
 	// Compute delta time
 	// Wait until 16ms has elapsed since last frame
-	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16))
-		;
+	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16));
+
 	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
 	if (deltaTime > 0.05f)deltaTime = 0.05f;
 	mTicksCount = SDL_GetTicks();
 
 	// Update all actors
 	mUpdatingActors = true;
-	/*for (auto actor : mActors)
-	{
-		actor->Update(deltaTime);
-	}*/
 }
 
 void Game::GenerateOutput()

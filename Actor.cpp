@@ -14,8 +14,7 @@ void Actor::Draw(SDL_Renderer* renderer){
 	assert(mTexture);
 	SDL_Rect r;
 	// Scale the width/height by owner's scale
-	r.w = 32;
-	r.h = 32;
+	r.w = r.h = 32;
 	// Center the rectangle around the position of the owner
 	r.x = 10;
 	r.y = 10;
