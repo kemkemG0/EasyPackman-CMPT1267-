@@ -12,7 +12,8 @@
  #include "SDL/SDL_mixer.h"
  #include "Stage.h"
  #include "Actor.h"
-
+ #include "Packman.h"
+#include<iostream>
 
 Game::Game()
 :mWindow(nullptr)
@@ -59,7 +60,9 @@ bool Game::Initialize()
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
 	stage = new Stage;
-	auto aaa = new Actor(this);
+
+	mActors.push_back(new Packman(this));
+
 	return true;
 }
 
@@ -125,12 +128,10 @@ void Game::GenerateOutput()
 	SDL_RenderClear(mRenderer);
 
 	stage->DrawStage(mRenderer);
-	
-	// Draw all sprite components
-		/*	for (auto sprite : mSprites)
-			{
-				sprite->Draw(mRenderer);
-			}*/
+
+	for(auto actor:mActors){
+		actor->Draw(mRenderer);
+	}
 
 	SDL_RenderPresent(mRenderer);
 }
@@ -161,7 +162,8 @@ SDL_Texture* Game::GetTexture(const std::string& fileName)
 		SDL_Surface* surf = IMG_Load(fileName.c_str());
 		if (!surf)
 		{
-			SDL_Log("Failed to load texture file %s", fileName.c_str());
+			// SDL_Log("Failed to load texture file %s", fileName.c_str());
+			std::cout<<fileName<<" not found\n";
 			return nullptr;
 		}
 

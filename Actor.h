@@ -1,3 +1,5 @@
+#pragma once
+
 #include"Game.h"
 #include"Stage.h"
 #include "SDL/SDL.h"
@@ -11,5 +13,5 @@ public:
 	double x,y;
 	SDL_Texture* mTexture;
 	void SetTexture(SDL_Texture*);
-    SDL_Texture* GetTexture(const std::string& fileName);
+    virtual void Draw(SDL_Renderer* renderer);
 };

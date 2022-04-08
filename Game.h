@@ -17,6 +17,7 @@
 
 #include "Stage.h"
 
+#include"Actor.h"
 
 class Game
 {
@@ -49,8 +50,6 @@ public:
 	// Any pending actors
 	std::vector<class Actor*> mPendingActors;
 
-	// All the sprite components drawn
-	std::vector<class SpriteComponent*> mSprites;
 
 	SDL_Window* mWindow;
 	SDL_Renderer* mRenderer;
@@ -59,7 +58,5 @@ public:
 	// Track if we're updating actors right now
 	bool mUpdatingActors;
 
-	// Game-specific
-	class Ship* mShip; // Player's ship
-	std::vector<class Asteroid*> mAsteroids;
+
 };

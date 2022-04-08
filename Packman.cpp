@@ -2,5 +2,6 @@
 
 Packman::Packman(Game* game)
     :Actor(game){
-        mTexture  = GetTexture("Assets/pacman.png");
+        SetTexture(game->GetTexture("Assets/packman.png"));
+        
 }
