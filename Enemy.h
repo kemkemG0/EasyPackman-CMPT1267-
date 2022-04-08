@@ -27,8 +27,6 @@ class Enemy :
         const int sy = this ->posi_y/32;
         const int sx = this->posi_x/32;
 
-        cout<<posi_y/32<<" "<<posi_x/32<<" \n";
-
         dis = vector<vector<int>>(24,vector<int>(24,1000));
         assert(sx<24 && sy<24 && gy<24 && gx<24);
         dis[sy][sx]=0;
@@ -46,14 +44,9 @@ class Enemy :
                 q.push({ny,nx});
             }
         }
-        // REP(i,24){
-        //     REP(j,24){
-        //         cout<<dis[i][j]<<"   ";
-        //     }
-        //     cout<<endl;
-        // }
+
         pair<int,int> now={gy,gx};
-        assert(dis[gy][gx]!=1000);
+        // assert(dis[gy][gx]!=1000);
         // get path from g->s
         int min=100000;
 
@@ -88,21 +81,14 @@ class Enemy :
                     }
                     now={ny,nx};
                     break;
-                    // cout<<ny<<" "<<nx<<" "<<dis[ny][nx]<<endl;
                 
                 }
             }
-            // cout<<"a";
         }
-
     }
 
     void getPath(){
         bfs();
-        // using dijkstra, get first some step of the shortest path to packman
-        // and compress it
-        // RRUPDDDDDDLL  -> RUPDL
-
     }
 };
 

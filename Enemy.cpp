@@ -7,22 +7,26 @@ Enemy::Enemy(Game* game,int x,int y,string filename):Actor(game,x,y){
 }
 
 void Enemy::Update(){
-    
-    if(path.empty() || count==10){
+
+    // assert(posi_x%32==0 || posi_y%32==0);
+    if(path.empty() || count==30){
         count=0;
         getPath();
     };
-    
+
     count++;
     
     assert(!path.empty());
-    direction = path.top();
+    
 
 
     if(posi_x%32==0 && posi_y%32==0){
+        cout<<"!!POP!!"<<endl;
+        direction = path.top();
         //didn't use this time
         path.pop();
     }
+    if(!canMove())return;
 
     if(direction==UP ){posi_y-=speed;}
 	else if(direction==DOWN){posi_y+=speed;}
