@@ -1,8 +1,8 @@
 #include "Packman.h"
 
-Packman::Packman(Game* game)
-    :Actor(game){
-    SetTexture(game->GetTexture("Assets/packman.png"));
+Packman::Packman(Game* game,int x,int y)
+    :Actor(game,x,y){
+    SetTexture(game->GetTexture("Assets/packman.png"),x,y);
     direction=999;
 }
 

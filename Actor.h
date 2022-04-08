@@ -9,11 +9,11 @@
 class Actor {
 public:
     class Game* mGame;
-	Actor(class Game* game);
+	Actor(class Game* game,int x,int y);
 	// ~Actor();
 	int posi_x,posi_y;
 	SDL_Texture* mTexture;
-	void SetTexture(SDL_Texture*);
+	void SetTexture(SDL_Texture*,int x, int y);
     virtual void Draw(SDL_Renderer* renderer);
 	virtual void Update()=0;
 	bool canChangeDirection();

@@ -13,6 +13,7 @@
  #include "Stage.h"
  #include "Actor.h"
  #include "Packman.h"
+ #include "Enemy.h"
 #include<iostream>
 
 Game::Game()
@@ -61,7 +62,10 @@ bool Game::Initialize()
 
 	stage = new Stage;
 
-	mActors.push_back(new Packman(this));
+	mActors.push_back(new Packman(this,3,22));
+	mActors.push_back(new Enemy(this,10,22,"Assets/blue.png"));
+	mActors.push_back(new Enemy(this,15,22,"Assets/red.png"));
+	mActors.push_back(new Enemy(this, 8, 22, "Assets/purple.png"));
 
 	return true;
 }

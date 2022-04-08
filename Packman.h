@@ -4,7 +4,7 @@ class Packman :
     public Actor
 {
     public:
-        Packman(Game* game);
+        Packman(Game* game, int x, int y);
         void Update() override;
     // ~Packman();
 };

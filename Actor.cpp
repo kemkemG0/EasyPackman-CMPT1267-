@@ -1,13 +1,13 @@
 #include"Actor.h"
 #include<assert.h>
 
-Actor::Actor(Game* game):mGame(game){}
+Actor::Actor(Game* game,int x, int y):mGame(game){}
 
 
-void Actor::SetTexture(SDL_Texture* tex){
+void Actor::SetTexture(SDL_Texture* tex, int x, int y){
 	mTexture = tex;
-	posi_x= 32*3;
-	posi_y= 32*22;
+	posi_x= 32*x;
+	posi_y= 32*y;
 	//SDL_QueryTexture(tex,nullptr,nullptr,32,32);
 }
 

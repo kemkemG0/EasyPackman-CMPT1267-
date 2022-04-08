@@ -28,6 +28,9 @@
     <ClCompile Include="Packman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -39,5 +42,6 @@
     <ClInclude Include="Packman.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Enemy.h" />
   </ItemGroup>
 </Project>
