@@ -16,7 +16,7 @@
  #include "Enemy.h"
 #include<iostream>
 
-Game::Game()
+Game::Game()	
 :mWindow(nullptr)
 ,mRenderer(nullptr)
 ,mIsRunning(true)
@@ -111,6 +111,19 @@ void Game::ProcessInput()
 	}
 }
 
+bool Game::isGameOver(){
+	int px = mActors[0]->posi_x;
+	int py = mActors[0]->posi_y;
+	for(int i=1;i<mActors.size();++i){
+
+		int ex = mActors[i]->posi_x;
+		int ey = mActors[i]->posi_y;
+		if(abs(px-ex)<32 && abs(py-ey)<32)return true;
+	}
+	return false;
+}
+
+
 void Game::UpdateGame()
 {
 	// Compute delta time
@@ -124,6 +137,8 @@ void Game::UpdateGame()
 	for (auto actor : mActors){
 		actor->Update();
 	}
+
+	mIsRunning = !isGameOver();
 	
 }
 

@@ -26,6 +26,8 @@ public:
 	bool Initialize();
 	void RunLoop();
 	void Shutdown();
+
+	bool isGameOver();
 	
 	SDL_Texture* GetTexture(const std::string& fileName);
 
