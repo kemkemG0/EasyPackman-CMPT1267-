@@ -7,9 +7,10 @@ Packman::Packman(Game* game)
 }
 
 void Packman::Update(){
+	// cout << posi_x / 32 << " " << posi_y / 32 << " "<<posi_x << " " << posi_y <<" "<<mGame->stage->STAGE[posi_x / 32][posi_y / 32]<< endl;
     //up
-	if(direction==UP){posi_y--;}
-	else if(direction==DOWN){posi_y++;}
-	else if(direction==LEFT){posi_x--;}
-	else if(direction==RIGHT){posi_x++;}
+	if(direction==UP && canMove()){posi_y-=speed;}
+	else if(direction==DOWN&& canMove()){posi_y+=speed;}
+	else if(direction==LEFT&& canMove()){posi_x-=speed;}
+	else if(direction==RIGHT&& canMove()){posi_x+=speed;}
 }

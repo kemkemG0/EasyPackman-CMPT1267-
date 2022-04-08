@@ -80,35 +80,39 @@ void Game::ProcessInput()
 {
 	SDL_Event event;
 	auto packman = mActors[0];
+	packman->previousDirection = packman->direction;
 	while (SDL_PollEvent(&event))
 	{
 		if (event.type == SDL_QUIT) mIsRunning = false;
 		else if (event.type == SDL_KEYDOWN){
 			switch (event.key.keysym.sym){
 				case SDLK_UP:
+				if(packman->previousDirection==packman->DOWN || packman->canChangeDirection())
 					packman->direction=0;
 					break;
 				case SDLK_DOWN:
+				if(packman->previousDirection==packman->UP || packman->canChangeDirection())
 					packman->direction=1;
 					break;
 				case SDLK_LEFT:
+				if(packman->previousDirection==packman->RIGHT || packman->canChangeDirection())
 					packman->direction=2;
 					break;
 				case SDLK_RIGHT:
+				if(packman->previousDirection==packman->LEFT || packman->canChangeDirection())
 					packman->direction=3;
 					break;
 			}
 		}
 	}
-	// std::cout<<packman->direction<<" ";
 }
 
 void Game::UpdateGame()
 {
 	// Compute delta time
 	// Wait until 16ms has elapsed since last frame
-	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16));
-	
+	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 64));
+
 	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
 	if (deltaTime > 0.05f)deltaTime = 0.05f;
 	mTicksCount = SDL_GetTicks();

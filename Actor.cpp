@@ -6,8 +6,8 @@ Actor::Actor(Game* game):mGame(game){}
 
 void Actor::SetTexture(SDL_Texture* tex){
 	mTexture = tex;
-	posi_x=100;
-	posi_y=100;
+	posi_x= 32*3;
+	posi_y= 32*22;
 	//SDL_QueryTexture(tex,nullptr,nullptr,32,32);
 }
 
@@ -24,9 +24,29 @@ void Actor::Draw(SDL_Renderer* renderer){
 	SDL_RenderCopy(renderer,mTexture,nullptr,&r);
 }
 
-std::pair<int,int> justEnteringCell(){
-	pair<int,int> ret;
+bool Actor::canChangeDirection(){
+	return posi_x%32==0 && posi_y%32==0;
+}
 
-	return ret;
+bool Actor::canMove(){
+	//when left-top corner is in x,y
+	int x,y;
+	auto stage  = mGame->stage;
+	
+	
+	if(direction==UP){
+		return stage->STAGE[posi_x/32][(posi_y-1)/32] != 1;
+	}
+	else if(direction==DOWN){
+		return stage->STAGE[(posi_x)/32][(posi_y+32+1)/32] != 1;
+	}
+	else if(direction==LEFT){
+		return stage->STAGE[(posi_x-1)/32][posi_y/32] != 1;
+	}
+	else if(direction==RIGHT){
+		return stage->STAGE[(posi_x+32+1)/32][posi_y/32] != 1;
+	}
+	
+	return true;
 }
 
