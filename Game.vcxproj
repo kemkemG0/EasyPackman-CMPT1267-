@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MyMacros.h" />
@@ -18,6 +19,7 @@
     <ClCompile Include="Stage.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
     <ClInclude Include="Game.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
