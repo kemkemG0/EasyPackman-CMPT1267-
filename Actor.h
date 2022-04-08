@@ -4,6 +4,7 @@
 #include"Stage.h"
 #include "SDL/SDL.h"
 #include "SDL/SDL_image.h"
+#include<utility>
 
 class Actor {
 public:
@@ -14,6 +15,9 @@ public:
 	SDL_Texture* mTexture;
 	void SetTexture(SDL_Texture*);
     virtual void Draw(SDL_Renderer* renderer);
-	void Update();
+	virtual void Update()=0;
+	std::pair<int,int> justEnteringCell();
 	int direction;
+
+	enum{UP,DOWN,LEFT,RIGHT};
 };

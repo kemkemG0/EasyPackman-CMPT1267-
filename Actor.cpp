@@ -24,11 +24,9 @@ void Actor::Draw(SDL_Renderer* renderer){
 	SDL_RenderCopy(renderer,mTexture,nullptr,&r);
 }
 
-void Actor::Update(){
-	//up
-	if(direction==0){posi_y--;}
-	else if(direction==1){posi_y++;}
-	else if(direction==2){posi_x--;}
-	else if(direction==3){posi_x++;}
+std::pair<int,int> justEnteringCell(){
+	pair<int,int> ret;
+
+	return ret;
 }
 
