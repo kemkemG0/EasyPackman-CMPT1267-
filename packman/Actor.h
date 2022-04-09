@@ -20,7 +20,7 @@ public:
 	bool canMove();
 	int direction_reserve;
 	int direction;
-	int speed=8;
+	int speed=4;
 	int previousDirection;
 
 	enum{UP,DOWN,LEFT,RIGHT};

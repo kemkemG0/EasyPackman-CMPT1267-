@@ -42,6 +42,8 @@
     <ClInclude Include="Packman.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Enemy.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

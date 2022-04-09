@@ -15,6 +15,8 @@
  #include "Packman.h"
  #include "Enemy.h"
 #include<iostream>
+#include<random>
+#include<time.h>
 
 Game::Game()
 :mWindow(nullptr)
@@ -142,12 +144,12 @@ void Game::UpdateGame()
 {
 	// Compute delta time
 	// Wait until 16ms has elapsed since last frame
-	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 64));
+	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 32));
 
 	if(counter%100==0){
-		mActors.push_back(new Enemy(this,3,10,"Assets/blue.png"));
-		mActors.push_back(new Enemy(this,22,15,"Assets/red.png"));
-		mActors.push_back(new Enemy(this, 20,8, "Assets/purple.png"));
+		if(rand()%3 == 0) mActors.push_back(new Enemy(this,3,10,"Assets/blue.png"));
+		if (rand() % 3 == 1) mActors.push_back(new Enemy(this,22,15,"Assets/red.png"));
+		if (rand() % 3 == 2) mActors.push_back(new Enemy(this, 20,8, "Assets/purple.png"));
 	}
 	++counter;
 	
